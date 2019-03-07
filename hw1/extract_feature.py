@@ -13,6 +13,7 @@ def parsing(input_file):
     for i in range(1, height, 18):
         train_data = np.hstack((train_data, raw_data[i:i+18, 3:]))
     train_data[10, :] = 0.0 # RAINFALL
+    #train_data[0, :] = 0.0 # AMB_TEMP
     train_data[4, :] = 0.0 # NO
     train_data[6, :] = 0.0 # NOx
 
@@ -54,6 +55,7 @@ def parsing_test(input_file):
     (height, width) = raw_data.shape
     for i in range(0, height, 18):
         raw_data[i+10, : ] = 0.0 # RAIN_FALL
+        #raw_data[i+0, : ] = 0.0 # AMB_TEMP
         raw_data[i+4, : ] = 0.0 # NO
         raw_data[i+6, : ] = 0.0 # NOx
         append_data = np.append(raw_data[i:i+18, 2:].flatten(), [1]).reshape((1, 18*9 + 1))
