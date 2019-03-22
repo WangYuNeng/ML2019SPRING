@@ -29,7 +29,6 @@ def parsing_test(input_file):
     test_x = raw_data[1: : ]
     # extract feature
     (height, width) = test_x.shape
-    print(raw_data.shape, test_x.shape)
     # normalize
     for i in range(width):
         data = test_x[ : , i]
