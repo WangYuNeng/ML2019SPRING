@@ -22,7 +22,6 @@ def parsing():
         else:
             train_data[ : , i] = data - avg
         norm_array = np.append(norm_array, np.array([avg, std]).reshape(1,2), axis=0)
-    print(norm_array)
     np.save("norm.npy", norm_array)
     np.save("train_feature.npy", train_data)
 
