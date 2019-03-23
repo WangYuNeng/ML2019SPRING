@@ -14,7 +14,6 @@ mean_one = np.zeros((1,width))
 cov_one = np.zeros((width, width))
 (height_one, w) = train_one.shape
 
-print(height_zero, height_one)
 
 p_zero = height_zero / (height_zero + height_one)
 cov_mutual = np.zeros((width, width))

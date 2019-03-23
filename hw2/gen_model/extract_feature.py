@@ -26,7 +26,6 @@ def parsing():
             one_count += 1
     zeros = np.array(train_zeros).flatten().reshape(zero_count, width).astype(int)
     ones = np.array(train_ones).flatten().reshape(one_count, width).astype(int)
-    print(zeros.shape, ones.shape)
     np.save("zeros.npy", zeros)
     np.save("ones.npy", ones)
 

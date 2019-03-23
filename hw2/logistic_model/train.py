@@ -11,8 +11,8 @@ def first_order(train_x, train_y):
     # initialize 
     w = np.ones((107, 1)) # including bias
     #w = np.load("weight.npy")
-    iteration = 5000
-    lr = 0.5
+    iteration = 1000
+    lr = 0.1
     lr_w = np.zeros((107, 1)) + 0.00000000000000000001 # prevent from divided by 0
     
     # training
