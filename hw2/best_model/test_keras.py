@@ -10,7 +10,7 @@ if len(sys.argv) != 2:
     print("python test.py output_file")
     exit()
 
-model = load_model("best_model/model.h5")
+model = load_model("best_model/model150.h5")
 test_x = np.load("best_model/test_feature.npy")
 test_y = model.predict(test_x, batch_size=100)
 with open(sys.argv[1], 'w') as f:

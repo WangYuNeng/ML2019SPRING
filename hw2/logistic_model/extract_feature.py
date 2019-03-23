@@ -26,7 +26,7 @@ def parsing():
     np.save("train_feature.npy", train_data)
 
 def parsing_test(input_file):
-    norm = np.load("norm.npy")
+    norm = np.load("logistic_model/norm.npy")
     raw_data = np.genfromtxt(input_file, delimiter=',')
     test_x = raw_data[1: : ]
     # extract feature
@@ -41,7 +41,7 @@ def parsing_test(input_file):
             test_x[ : , i] = (data - avg) / std
         else:
             test_x[ : , i] = data - avg
-    np.save("test_feature.npy", test_x)
+    np.save("logistic_model/test_feature.npy", test_x)
 
 
 if sys.argv[1] == 'train':

@@ -10,8 +10,8 @@ if len(sys.argv) != 2:
     print("python test.py output_file")
     exit()
 
-w = np.load("weight.npy")
-test_x = np.load("test_feature.npy")
+w = np.load("logistic_model/weight.npy")
+test_x = np.load("logistic_model/test_feature.npy")
 test_y = test_x.dot(w) 
 with open(sys.argv[1], 'w') as f:
     f.write("id,label\n")
