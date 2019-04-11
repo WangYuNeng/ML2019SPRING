@@ -70,7 +70,7 @@ def plot_img(img, cm, filename):
   plt.axis('off')
   if filename != None:
     plt.savefig(filename)
-  plt.show()
+  plt.close()
 
 def add_mask(img, mask):
   masked = np.zeros_like(img)
@@ -85,7 +85,6 @@ for i in range(7):
   img = x_train[i]
   mask = get_Saliency(model, img, i)
 
-  plot_img(img.reshape((48, 48)), 'gray', filename = None)
   plot_img(mask.reshape((48, 48)), 'jet', prefix+"fig1_"+str(i)+".jpg")
 
 # visualize layer
@@ -98,7 +97,7 @@ def plot_layer_output(imgs, filename):
         plt.axis('off')
         plt.imshow(imgs[x * plot_y + y], cmap='gray')
     plt.savefig(filename)
-    plt.show()
+    plt.close()
 
 # visualize layer
 # util function to convert a tensor into a valid image
@@ -189,4 +188,4 @@ for i in range(7):
   plt.grid('off')
   plt.axis('off')
   plt.savefig(prefix+"fig3_"+str(i)+".jpg")
-  plt.show()
+  plt.close()
