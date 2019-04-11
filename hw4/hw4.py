@@ -90,7 +90,7 @@ for i in range(7):
 
 # visualize layer
 def plot_layer_output(imgs, filename):
-    plot_x, plot_y = 8, 16
+    plot_x, plot_y = 4, 8
     print("plotting......")
     for (x, y) in [(i, j) for i in range(plot_x) for j in range(plot_y)]:
         plt.subplot(plot_x, plot_y, x * plot_y + y+1)
@@ -122,7 +122,7 @@ def vis_img_in_filter(img = np.array(x_train[3]).reshape((1, 48, 48, 1)).astype(
                       layer_name = 'conv2d_2'):
     layer_output = layer_dict[layer_name].output
     img_ascs = list()
-    for filter_index in range(layer_output.shape[3]):
+    for filter_index in range(32):
         # build a loss function that maximizes the activation
         # of the nth filter of the layer considered
         loss = K.mean(layer_output[:, :, :, filter_index])
